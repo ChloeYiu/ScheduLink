@@ -1,36 +1,41 @@
 "use client"
 
-import { useState } from "react";
+// Import necessary modules
+import React, { useState } from 'react';
 
-interface AvailabilityInputs {
-  text: String,
+interface Types {
+    text: string,
 }
 
-import React, { ChangeEvent } from 'react';
+const AvailabilityInput = ({text}: Types) => {
+  // State to store the input value
+  const [inputValue, setInputValue] = useState('');
 
-interface NumberInputProps {
-  value: string;
-  onChange: (value: string) => void;
-}
+  // Function to handle input changes and limit to 4 digits
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
 
-const AvailabilityInput: React.FC<NumberInputProps> = ({ value, onChange }) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    // Remove non-numeric characters using a regular expression
-    const newValue = e.target.value.replace(/[^0-9]/g, '');
+    // Allow only numeric input using a regular expression
+    const numericInput = value.replace(/[^0-9]/g, '');
 
-    // Pass the cleaned numeric value to the parent component
-    onChange(newValue);
+    // Limit the input to 4 digits
+    const limitedInput = numericInput.slice(0, 4);
+
+    // Update the state with the limited input
+    setInputValue(limitedInput);
   };
 
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={handleChange}
-      placeholder="Enter numbers only"
-    />
+    <div className='flex flex-row gap-6 justify-center items-center m-auto'>
+      <input
+        type="number"
+        value={inputValue}
+        onChange={handleInputChange}
+        placeholder={text}
+        className='text-black p-2 bg-white w-24'
+      />
+    </div>
   );
 };
 
-
-export default AvailabilityInput
+export default AvailabilityInput;

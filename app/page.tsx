@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Button, GenerateButton, ImportButton, TimeInputForm } from '@/components'
+import { GenerateButton, ImportButton, AvailabilityInput, DateInput } from '@/components'
 import * as ical from 'node-ical'
 import axios, { AxiosResponse, AxiosError } from 'axios'
 
@@ -65,25 +65,37 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div>
-        <h3 className="font-bold text-5xl mb-2">ScheduLink</h3>
+        <h3 className="font-bold text-5xl mb-4">ScheduLink</h3>
         <p></p>
       </div>
 
       <div className='upload-cal mt-4 text-center'>
-        <h4 className='text-md font-semibold mb-2'>Upload your calendar</h4>
+        <h4 className='text-md font-semibold mb-4'>Upload your calendar</h4>
         <ImportButton text="Choose files"/>
       </div>
 
       <div className='timeslots mt-4 text-center'> 
-        <h4 className='text-md font-semibold mb-2'>Choose your availability</h4>
-        <div>
-          
+        <h4 className='text-md font-semibold mb-4'>Choose your availability</h4>
+        
+        <div className='flex flex-row gap-6 justify-center items-center mb-4'>
+          <h4 className='w-48'>Time (24 hour clock):</h4>
+          <AvailabilityInput text="Start"/>
+          <p>to</p>
+          <AvailabilityInput text="End"/>
         </div>
+
+        <div className='flex flex-row gap-6 justify-center items-center mb-2'>
+          <h4 className='w-48'>Date (DD/MM/YY):</h4>
+          <DateInput text="Start"/>
+          <p>to</p>
+          <DateInput text="End"/>
+        </div>
+        
       </div>
 
 
       <div className='generate mt-4'>
-        <GenerateButton text="Generate" onClick={}/>
+        <GenerateButton text="Generate"/>
       </div>
     </main>
   );
