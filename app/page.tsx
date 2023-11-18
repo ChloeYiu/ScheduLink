@@ -32,7 +32,7 @@ axios.post('https://api.agemo.ai/execute', {
     }
 }, {
     headers: {
-        'x-api-key': AGEMO_API_KEY
+      'x-api-key': AGEMO_API_KEY
     }
 })
 .then(response => {
@@ -43,6 +43,8 @@ axios.post('https://api.agemo.ai/execute', {
 });
 
 export default function Home() {
+  console.log("Hi");
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div>
