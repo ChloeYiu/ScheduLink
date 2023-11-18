@@ -83,7 +83,7 @@ export default function Home() {
 
 
       <div className='generate mt-4'>
-        <GenerateButton text="Generate"/>
+        <GenerateButton text="Generate" onClick={}/>
       </div>
     </main>
   );
