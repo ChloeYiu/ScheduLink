@@ -21,6 +21,7 @@ const date_range = {
 
 
 const duration = '1'
+let executionId = ''
 
 axios.post('https://api.agemo.ai/execute', {
     app_id: 'clp405gwx0003jr08epg6khb6',
@@ -37,10 +38,24 @@ axios.post('https://api.agemo.ai/execute', {
     }
 })
 .then(response => {
+    console.log("Hi")
+    console.log(response.data);
+    executionId = response.data.execution_id
+})
+.catch(error => {
+    console.error(error);
+});
+
+axios.get(`https://api.agemo.ai/execution-status?execution_id=${[executionId]}`, {
+    headers: {
+        'x-api-key': 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3'
+    }
+})
+.then(response => {
     console.log(response.data);
 })
 .catch(error => {
-    //console.error(error);
+    console.error(error);
 });
 
 export default function Home() {
