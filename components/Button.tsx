@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const uploadCal = async () => {
@@ -18,17 +19,27 @@ const uploadCal = async () => {
     .catch((error) => console.log(error));
 };
 
-const handleClick = () => {
-  uploadCal();
-};
-
 interface ButtonInputs {
   text: String;
 }
 
 const Button = ({ text }: ButtonInputs) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+    uploadCal();
+  };
+
   return (
-    <button className="w-100" onClick={handleClick}>
+    <button
+      onClick={handleClick}
+      className={`px-6 py-4 m-2 w-32 ${
+        isClicked
+          ? "bg-green-500 border-2 border-green-500 text-black"
+          : "text-white border-2 border-green-500"
+      }`}
+    >
       {text}
     </button>
   );

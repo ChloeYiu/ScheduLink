@@ -1,0 +1,133 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//td.eng.cam.ac.uk/tod//
+X-WR-CALNAME:CUED 3A3 Lectures (version 01Nov2023)
+BEGIN:VEVENT
+UID:73_122_1_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231009T090000Z
+DTEND:20231009T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[1]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_2_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231016T090000Z
+DTEND:20231016T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[2]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_3_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231023T090000Z
+DTEND:20231023T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[3]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_4_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231030T100000Z
+DTEND:20231030T110000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[4]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_5_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231106T100000Z
+DTEND:20231106T110000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[5]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_6_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231113T100000Z
+DTEND:20231113T110000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[6]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_7_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231120T100000Z
+DTEND:20231120T110000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[7]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:73_122_8_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231127T100000Z
+DTEND:20231127T110000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[8]L Jarrett/Agarwal(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_1_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231010T080000Z
+DTEND:20231010T090000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[1]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_2_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231017T080000Z
+DTEND:20231017T090000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[2]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_3_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231024T080000Z
+DTEND:20231024T090000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[3]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_4_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231031T090000Z
+DTEND:20231031T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[4]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_5_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231107T090000Z
+DTEND:20231107T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[5]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_6_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231114T090000Z
+DTEND:20231114T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[6]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_7_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231121T090000Z
+DTEND:20231121T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[7]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+BEGIN:VEVENT
+UID:131_132_8_todb@td.eng.cam.ac.uk
+DTSTAMP:20231101T113423
+ORGANIZER:MAILTO:teaching-office-calendars@eng.cam.ac.uk
+DTSTART:20231128T090000Z
+DTEND:20231128T100000Z
+SUMMARY:3A3/Fluid Mechanics II (double module)[8]L Agarwal/Jarrett(Lecture Room 4)
+END:VEVENT
+END:VCALENDAR
