@@ -1,20 +1,22 @@
-import { copyFile } from "fs";
+import { copyFile, readdirSync } from "fs";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  // console.log("Hi");
   const { searchParams } = new URL(req.url);
   const dir = searchParams.get("dir");
+
+  console.log(readdirSync("./cal").length);
+
   if (dir !== null) {
     copyFile(
-      "C:/Users/chloe_/Desktop/output.png",
-      "C:/Users/chloe_/Desktop/schedulink/cal",
+      "../output.png",
+      `./cal/calendar_${readdirSync("./cal").length}.png`,
       (error) => {
         if (error) throw error;
+        return new NextResponse("Error uploading file");
       }
     );
-    console.log("Success");
-    return new NextResponse("Yay");
+    return new NextResponse("File uploaded");
   }
-  return new NextResponse("No dir given");
+  return new NextResponse("Error: No dir given");
 }
