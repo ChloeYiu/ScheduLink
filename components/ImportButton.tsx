@@ -6,7 +6,7 @@ interface ButtonInputs {
   text: String,
 }
 
-const Button = ({text}: ButtonInputs) => {
+const ImportButton = ({text}: ButtonInputs) => {
   const [isClicked, setIsClicked] = useState(false);
   
   const handleClick = () => {
@@ -16,12 +16,11 @@ const Button = ({text}: ButtonInputs) => {
   return (
     <button 
       onClick={handleClick}
-      className={`px-6 py-4 m-2 w-32 ${
-        isClicked ? 'bg-green-500 border-2 border-green-500 text-black': 'text-white border-2 border-green-500'}`}
+      className="px-6 py-4 text-white m-2 w-64 text-lg font-semibold bg-purple-500 hover:bg-purple-700 ease-in duration-100"
     >
       {text}
     </button>
   )
 }
 
-export default Button
+export default ImportButton
