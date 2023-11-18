@@ -34,7 +34,7 @@ axios.post('https://api.agemo.ai/execute', {
     }
 }, {
     headers: {
-        'x-api-key': AGEMO_API_KEY
+      'x-api-key': AGEMO_API_KEY
     }
 })
 .then(response => {
@@ -59,6 +59,8 @@ axios.get(`https://api.agemo.ai/execution-status?execution_id=${[executionId]}`,
 });
 
 export default function Home() {
+  console.log("Hi");
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div>
