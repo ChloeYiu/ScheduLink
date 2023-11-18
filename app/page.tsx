@@ -9,7 +9,10 @@ export default function Home() {
         <p></p>
       </div>
 
-      <div className='timeslots'>
+      <div className='timeslots'> 
+        <Button text="Morning"/>
+        <Button text="Morning"/>
+        <Button text="Morning"/>
         <Button text="Morning"/>
       </div>
 
