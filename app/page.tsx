@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { Button, GenerateButton } from '@/components'
 import ImportButton from '@/components/ImportButton'
-import * as ical from 'node-ical' 
+import * as ical from 'node-ical'
+import axios, { AxiosResponse, AxiosError } from 'axios'
+
 
 const events1 = ical.sync.parseFile('public/resources/calendar(2).ics')
 const events2 = ical.sync.parseFile('public/resources/calendar(3).ics')
 let cals: Array<Object> = [events1, events2]
-const axios = require('axios');
 const AGEMO_API_KEY = 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3';
 const time_range = {
   start_time: new Date(2023, 11, 18, 9, 0, 0),
@@ -39,7 +40,7 @@ axios.post('https://api.agemo.ai/execute', {
     console.log(response.data);
 })
 .catch(error => {
-    console.error(error);
+    //console.error(error);
 });
 
 export default function Home() {
