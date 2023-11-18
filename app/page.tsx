@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import { Button, GenerateButton } from '@/components'
-import ImportButton from '@/components/ImportButton'
+import { Button, GenerateButton, ImportButton, TimeInputForm } from '@/components'
 import * as ical from 'node-ical'
 import axios, { AxiosResponse, AxiosError } from 'axios'
+
+
 
 
 const events1 = ical.sync.parseFile('public/resources/calendar(2).ics')
@@ -46,6 +47,7 @@ axios.post('https://api.agemo.ai/execute', {
 export default function Home() {
   console.log("Hi");
 
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div>
@@ -61,12 +63,10 @@ export default function Home() {
       <div className='timeslots mt-4 text-center'> 
         <h4 className='text-md font-semibold mb-2'>Choose your availability</h4>
         <div>
-          <Button text="Morning"/>
-          <Button text="Afternoon"/>
-          <Button text="Evening"/>
-          <Button text="Night"/>
+          
         </div>
       </div>
+
 
       <div className='generate mt-4'>
         <GenerateButton text="Generate"/>
