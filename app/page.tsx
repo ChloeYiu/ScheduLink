@@ -1,6 +1,46 @@
 import Image from 'next/image'
 import { Button, GenerateButton } from '@/components'
 import ImportButton from '@/components/ImportButton'
+import * as ical from 'node-ical' 
+
+const events1 = ical.sync.parseFile('@/public/resources/calendar(2).ics')
+const events2 = ical.sync.parseFile('@/public/resources/calendar(3).ics')
+let cals: Array<Object> = [events1, events2]
+const axios = require('axios');
+const AGEMO_API_KEY = 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3';
+const time_range = {
+  start_time: new Date(2023, 11, 18, 9, 0, 0),
+  end_time: new Date(2023, 11, 18, 21, 0, 0)
+}
+const date_range = {
+  start_time: new Date(2023, 10, 1),
+  end_time: new Date(2023, 10, 23)
+}
+
+
+
+const duration = '1'
+
+axios.post('https://api.agemo.ai/execute', {
+    app_id: 'clp405gwx0003jr08epg6khb6',
+    inputs: {
+        "calendar_files": cals,
+		"time_range": time_range,
+		"date_range": date_range,
+		"num_slots": 3,
+		"duration": duration
+    }
+}, {
+    headers: {
+        'x-api-key': AGEMO_API_KEY
+    }
+})
+.then(response => {
+    console.log(response.data);
+})
+.catch(error => {
+    console.error(error);
+});
 
 export default function Home() {
   return (
