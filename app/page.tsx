@@ -24,6 +24,21 @@ const date_range = {
 const duration = '1'
 let executionId = ''
 
+const getAPIres = async (executionId: string) => {
+  const response = await axios.get(`https://api.agemo.ai/execution-status?execution_id=${[executionId]}`, {
+        headers: {
+            'x-api-key': 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3'
+        }
+    })
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+  return response
+}
+
 axios.post('https://api.agemo.ai/execute', {
     app_id: 'clp405gwx0003jr08epg6khb6',
     inputs: {
@@ -40,24 +55,21 @@ axios.post('https://api.agemo.ai/execute', {
 })
 .then(response => {
     console.log("Hi")
-    console.log(response.data);
-    executionId = response.data.execution_id
+    // console.log(response.data);
+    executionId = response.data.execution_id;
+    console.log(getAPIres(executionId))
+    while (getAPIres(executionId).status == 'RUNNING'){
+      console.log("getting API")
+    }
+    getAPIres(executionId)
+    getAPIres(executionId);
 })
 .catch(error => {
     console.error(error);
 });
 
-axios.get(`https://api.agemo.ai/execution-status?execution_id=${[executionId]}`, {
-    headers: {
-        'x-api-key': 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3'
-    }
-})
-.then(response => {
-    console.log(response.data);
-})
-.catch(error => {
-    console.error(error);
-});
+
+
 
 export default function Home() {
   console.log("Hi");
@@ -83,7 +95,6 @@ export default function Home() {
 
 
       <div className='generate mt-4'>
-        <GenerateButton text="Generate" onClick={}/>
       </div>
 
     </main>
