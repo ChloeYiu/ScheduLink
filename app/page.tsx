@@ -2,21 +2,31 @@ import Image from 'next/image'
 import { Button, GenerateButton, ImportButton, TimeInputForm } from '@/components'
 import * as ical from 'node-ical'
 import axios, { AxiosResponse, AxiosError } from 'axios'
+import * as fs from 'fs'
+import * as path from 'path'
+
+function readFileAsBase64(filePath: string): string {  
+   // Ensure the file path is absolute   
+   const absolutePath = path.resolve(filePath);    
+   // Read file as a buffer   
+   const fileBuffer = fs.readFileSync(absolutePath);    
+   // Convert the file buffer to a base64 string   
+   const base64String = fileBuffer.toString('base64');    
+   return base64String; }
 
 
 
-
-const events1 = ical.sync.parseFile('public/resources/calendar(2).ics')
-const events2 = ical.sync.parseFile('public/resources/calendar(3).ics')
-let cals: Array<Object> = [events1, events2]
+const events1 = "file://calendar1.ics;base64," + readFileAsBase64('public/resources/calendar(2).ics')
+const events2 = "file://calendar1.ics;base64," + readFileAsBase64('public/resources/calendar(3).ics')
+let cals: Array<String> = [events1, events2]
 const AGEMO_API_KEY = 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3';
 const time_range = {
-  start_time: new Date(2023, 11, 18, 9, 0, 0),
-  end_time: new Date(2023, 11, 18, 21, 0, 0)
+  start: new Date(2023, 11, 18, 9, 0, 0),
+  end: new Date(2023, 11, 18, 21, 0, 0)
 }
 const date_range = {
-  start_time: new Date(2023, 10, 1),
-  end_time: new Date(2023, 10, 23)
+  start: new Date(2023, 10, 1),
+  end: new Date(2023, 10, 23)
 }
 
 
@@ -32,11 +42,13 @@ const getAPIres = async (executionId: string) => {
     })
     .then(response => {
         console.log(response.data);
+        return response.data
     })
     .catch(error => {
         console.error(error);
     });
-  return response
+  // console.log(execData)
+  // console.log('Here is this')
 }
 
 axios.post('https://api.agemo.ai/execute', {
@@ -58,7 +70,10 @@ axios.post('https://api.agemo.ai/execute', {
     // console.log(response.data);
     executionId = response.data.execution_id;
     console.log(getAPIres(executionId))
-    while (getAPIres(executionId).status == 'RUNNING'){
+    let currstatus = await getAPIres(executionId)
+    console.log(currstatus)
+    while (currstatus.status == 'RUNNING'){
+      let currstatus = await getAPIres(executionId)
       console.log("getting API")
     }
     getAPIres(executionId)
