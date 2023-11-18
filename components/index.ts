@@ -4,6 +4,7 @@ import ImportButton from "./ImportButton";
 import TimeSlider from "./TimeSlider";
 import TimeInputForm from "./TimeInput";
 import AvailabilityInput from "./AvailabilityInput";
+import DateInput from "./DateInput";
 
 export {
     Button,
@@ -12,4 +13,5 @@ export {
     TimeSlider,
     TimeInputForm,
     AvailabilityInput,
+    DateInput,
 }
