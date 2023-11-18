@@ -3,8 +3,8 @@ import { Button, GenerateButton } from '@/components'
 import ImportButton from '@/components/ImportButton'
 import * as ical from 'node-ical' 
 
-const events1 = ical.sync.parseFile('@/public/resources/calendar(2).ics')
-const events2 = ical.sync.parseFile('@/public/resources/calendar(3).ics')
+const events1 = ical.sync.parseFile('public/resources/calendar(2).ics')
+const events2 = ical.sync.parseFile('public/resources/calendar(3).ics')
 let cals: Array<Object> = [events1, events2]
 const axios = require('axios');
 const AGEMO_API_KEY = 'KikSukQvmY3m1RPzNZiDy64CV1XlR5Su2bYJlgP3';
