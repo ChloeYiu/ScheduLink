@@ -3,21 +3,21 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-const uploadCal = async () => {
-  // fetch("/api/save-file", {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify("C:/Users/chloe_/Desktop/output.png"),
-  // });
-  axios
-    .get("/api/save-file", { params: { dir: "output.png" } })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => console.log(error));
-};
+// const uploadCal = async () => {
+//   // fetch("/api/save-file", {
+//   //   method: "GET",
+//   //   headers: {
+//   //     "Content-Type": "application/json",
+//   //   },
+//   //   body: JSON.stringify("C:/Users/chloe_/Desktop/output.png"),
+//   // });
+//   axios
+//     .get("/api/save-file", { params: { dir: "output.png" } })
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((error) => console.log(error));
+// };
 
 interface ButtonInputs {
   text: String;
@@ -28,7 +28,7 @@ const Button = ({ text }: ButtonInputs) => {
 
   const handleClick = () => {
     setIsClicked(!isClicked);
-    uploadCal();
+    // uploadCal();
   };
 
   return (
